@@ -28,7 +28,7 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 <...>
 
 ## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/1UgK-6l38k5T81XjcTIn7CHnGRkB_sBXS5xQWAVhWmks/edit#gid=0>
+<https://docs.google.com/spreadsheets/d/1L9VLEDx7Kn395DUjN9YTIxR6k_0ctQEnXS4-DJYapfk/edit?usp=sharing>
 
 ## 開発環境
 - OS：Linux(CentOS)
