@@ -28,6 +28,8 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 [UI Flow](https://drive.google.com/file/d/15LPyXF4mxrPVR0f-1bckvxB_m__6cxkt/view?usp=sharing)
 
 [ワイヤーフレーム](https://drive.google.com/file/d/1WpKv4Wc2ZFEeWciMzYEpyo0ClegDViOj/view?usp=sharing)
+
+[WBS](https://docs.google.com/spreadsheets/d/1ZpONUmYHL5hzEsi-cxXr5efgdTL8TiOaQn3oZR2_ns4/edit?usp=sharing)
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1L9VLEDx7Kn395DUjN9YTIxR6k_0ctQEnXS4-DJYapfk/edit?usp=sharing>
 
