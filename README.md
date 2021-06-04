@@ -27,6 +27,7 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 ## 設計書
 [UI Flow](https://drive.google.com/file/d/15LPyXF4mxrPVR0f-1bckvxB_m__6cxkt/view?usp=sharing)
 
+[ワイヤーフレーム](https://drive.google.com/file/d/1WpKv4Wc2ZFEeWciMzYEpyo0ClegDViOj/view?usp=sharing)
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1L9VLEDx7Kn395DUjN9YTIxR6k_0ctQEnXS4-DJYapfk/edit?usp=sharing>
 
@@ -37,6 +38,14 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
+## 実験環境
+- OS：Linux(Ubuntu)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Visual Stuido Code
+
 ## 使用素材
 - 今後変更予定あり
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- https://unsplash.com/photos/4hbJ-eymZ1o
