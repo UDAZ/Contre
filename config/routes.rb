@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-  get 'posts/new'
-  get 'posts/edit'
-  get 'posts/show'
-  get 'users/index'
-  get 'users/edit'
-  get 'users/show'
-  get 'homes/top'
-  get 'homes/about'
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'homes#top'
+  get '/about' => 'homes#about'
+  devise_for :users,only: [:omniauth_callback] , controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+  devise_scope :user do
+    delete 'users/sign_out' => 'devise/sessions#destroy', as: :destroy_user_session
+  end
+  get '/ranking' => 'users#index', as: :users
+  resources :users,only: [:show,:edit,:update] do
+    get 'follows' => 'users#follows', as: 'follows'    
+    get 'followers' => 'users#followers', as: 'followers'    
+  end
+  post 'follow/:id' => 'relationships#follow', as: 'follow'
+  post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
 end
