@@ -50,29 +50,30 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+#Rspecによるテスト
 group :test do
   gem 'capybara', '>= 2.15'
   # gem 'selenium-webdriver'
   # gem 'chromedriver-helper'
-  gem 'rspec-rails'
+  gem 'rspec-rails' 
   gem "factory_bot_rails"
   gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-github'
-gem 'omniauth-rails_csrf_protection'
-gem 'dotenv-rails'
-gem 'bootstrap', '~> 4.5'
-gem 'kaminari','~> 1.2.1'
-gem 'jquery-rails'
-gem 'font-awesome-sass', '~> 5.13'
-gem 'rubocop'
-gem 'pry-rails'
-gem 'pry-byebug'
-gem 'whenever', require: false
-gem "refile", require: "refile/rails", github: 'manfe/refile'
-gem "refile-mini_magick"
+gem 'devise' #ユーザー管理
+gem 'omniauth' #oauth
+gem 'omniauth-github' #github用のoauth補助
+gem 'omniauth-rails_csrf_protection' #csrf_detected対策
+gem 'dotenv-rails' #環境変数登録
+gem 'bootstrap', '~> 4.5' #CSSフレームワーク
+gem 'kaminari','~> 1.2.1' #ページ送り
+gem 'jquery-rails' #jquery
+gem 'font-awesome-sass', '~> 5.13' #デコレーション
+gem 'rubocop' #インデント調整
+gem 'pry-rails' #デバッグ
+gem 'pry-byebug' #デバッグ
+gem 'whenever', require: false #バッチ処理
+gem "refile", require: "refile/rails", github: 'manfe/refile' #画像処理
+gem "refile-mini_magick" #画像処理
