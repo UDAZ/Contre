@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def update
   end
   
-  def delete
+  def destroy
   end
 
   def show
