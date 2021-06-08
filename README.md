@@ -34,7 +34,9 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 [ER図](https://drive.google.com/file/d/17ttgQQM-OlCq4CnvlXPSIiORlN0REOTG/view?usp=sharing)(
 [PDF](https://drive.google.com/file/d/1CETjBLyEWDTX1kRyO-j68pI8w-R3NEV8/view?usp=sharing) )
 
-[テーブル定義書](https://drive.google.com/file/d/15AuQKaz0aoF_eX07CcXCLhOmYSmEpM1x/view?usp=sharing)( [PDF](https://drive.google.com/file/d/1UYdBY5M1_6Sd0zNCNubdpqPUoHIJQRyw/view?usp=sharing) )
+[テーブル定義書](https://drive.google.com/file/d/15AuQKaz0aoF_eX07CcXCLhOmYSmEpM1x/view?usp=sharing)
+
+[アプリケーション詳細設計](https://drive.google.com/file/d/1su5fwNQsVmKnboMcc1U6SkYwetNoEraD/view?usp=sharing)
 
 [WBS](https://docs.google.com/spreadsheets/d/1ZpONUmYHL5hzEsi-cxXr5efgdTL8TiOaQn3oZR2_ns4/edit?usp=sharing)
 ## チャレンジ要素一覧
