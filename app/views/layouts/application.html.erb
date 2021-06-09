@@ -12,7 +12,7 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">こんとる</a>
+        <%= link_to 'こんとる', root_path, class: 'navbar-brand' %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,26 +20,26 @@
           <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <a class="nav-link" href="#">投稿一覧</a>
+              <%= link_to '投稿一覧', posts_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ランキング</a>
+              <%= link_to 'ランキング', users_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ユーザーページ</a>
+              <%= link_to 'ユーザーページ', user_path(current_user), class: 'nav-link' %>
             </li>
             <li class="nav-item">
               <%= link_to 'ログアウト', destroy_user_session_path, class: 'nav-link', method: :delete %>
             </li>
           <% else %>
             <li class="nav-item">
-              <a class="nav-link" href="#">投稿一覧</a>
+              <%= link_to '投稿一覧', posts_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ランキング</a>
+              <%= link_to 'ランキング', users_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <%= link_to 'About', about_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
               <%= link_to "githubで登録・ログイン", user_github_omniauth_authorize_path, class: 'nav-link', method: :post %>
