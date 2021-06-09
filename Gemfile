@@ -39,6 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails' #デバッグ
+  gem 'pry-byebug' #デバッグ
 end
 
 group :development do
@@ -72,8 +74,6 @@ gem 'kaminari','~> 1.2.1' #ページ送り
 gem 'jquery-rails' #jquery
 gem 'font-awesome-sass', '~> 5.13' #デコレーション
 gem 'rubocop' #インデント調整
-gem 'pry-rails' #デバッグ
-gem 'pry-byebug' #デバッグ
 gem 'whenever', require: false #バッチ処理
 gem "refile", require: "refile/rails", github: 'manfe/refile' #画像処理
 gem "refile-mini_magick" #画像処理
