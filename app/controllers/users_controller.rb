@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def index
-    @users = User.order("contributions DESC").page(params[:page]).per(10)
-    @page = 1
-    if params[:page]
+    @users = User.order("contributions DESC").page(params[:page]).per(10)　#orderでソートできる。
+    @page = 1 #ランキングとページネート用、これがないと次ページでランキングが一位になってしまう。
+    if params[:page] #2ページ目は11位から3ページ目は21位から始まるようになる。
       @page = (params[:page].to_i - 1) * 10 + 1
     end
   end
