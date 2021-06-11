@@ -7,6 +7,22 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
+  has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy # フォロー取得
+  has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # フォロワー取得
+  has_many :following_user, through: :follower, source: :followed #自分がフォローしている人
+  has_many :follower_user, through: :followed, source: :follower #自分をフォローしている人
+  # ユーザーをフォローする
+  def follow(user_id)
+    follower.create(followed_id: user_id)
+  end
+  # ユーザーのフォローを外す
+  def unfollow(user_id)
+    follower.find_by(followed_id: user_id).destroy
+  end
+  # フォローしていればtrueを返す
+  def following?(user)
+    following_user.include?(user)
+  end
   def self.find_for_github_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user| 
       user.name = auth.info.name
