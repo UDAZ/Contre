@@ -11,7 +11,6 @@
         <thead class="thead-light">
           <tr>
             <th>Name</th>
-            <th>Contributions</th>
             <th>Follows</th>
             <th>Followers</th>
             <th></th>
@@ -21,7 +20,6 @@
           <% @user.following_user.each do |user| %>
             <tr>
               <td><%= link_to "#{user.name}", user_path(user) %></td>
-              <td><%= user.contributions %></td>
               <td><%= link_to "#{user.follower.count}", user_follows_path(user) %></td>
               <td><%= link_to "#{user.followed.count}", user_followers_path(user) %></td>
               <% unless user = current_user %>
