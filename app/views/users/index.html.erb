@@ -1,2 +1,33 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="col-12 mt-3">
+  <h4 class="display-5"><i class="fas fa-book mr-2"></i>Contributions Ranking</h4>
+</div>
+<div class="col-12">
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex justify-content-center">
+        <h4 class="card-title">Ranking</h4>
+      </div>
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Contributions</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each.with_index(@page) do |user, i| %>
+            <tr>
+              <td><%= i %></td>
+              <td><%= user.name %></td>
+              <td><%= user.contributions %></td>
+              <td><%= link_to 'Show', user_path(user), class: "btn btn-outline-dark" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @users %>
+    </div>
+  </div>
+</div>
