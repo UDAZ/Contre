@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   def index
+    @users = User.order("contributions DESC").page(params[:page]).per(10)
+    @page = 1
+    if params[:page]
+      @page = (params[:page].to_i - 1) * 10 + 1
+    end
   end
 
   def show
