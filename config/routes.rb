@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#top'
+  post '/' => 'homes#top'
   get '/about' => 'homes#about'
   devise_for :users,only: [:omniauth_callback] , controllers: {
     omniauth_callbacks: "users/omniauth_callbacks"
