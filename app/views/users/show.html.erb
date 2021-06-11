@@ -17,11 +17,11 @@
       </div>
       <div class="d-flex justify-content-between">
         <h4 class="card-title">Follows</h4>
-        <h4 class="card-title"><a href="#"><%= @user.follower.count %></a></h4>
+        <h4 class="card-title"><%= link_to "#{@user.follower.count}", user_follows_path(@user.id) %></h4>
       </div>
       <div class="d-flex justify-content-between">
         <h4 class="card-title">Followers</h4>
-        <h4 class="card-title"><a href="#"><%= @user.followed.count %></a></h4>
+        <h4 class="card-title"><%= link_to "#{@user.followed.count}", user_followers_path(@user.id) %></h4>
       </div>
       <div class="d-flex justify-content-between my-1">
         <%= link_to "Visit GitHub", "#{@user.github_url}", class: "btn btn-dark w-100"%>
