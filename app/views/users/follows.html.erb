@@ -22,12 +22,12 @@
               <td><%= link_to "#{user.name}", user_path(user) %></td>
               <td><%= link_to "#{user.follower.count}", user_follows_path(user) %></td>
               <td><%= link_to "#{user.followed.count}", user_followers_path(user) %></td>
-              <td>
+              <td class="p-1">
                 <% unless user == current_user %>
                   <% if current_user.following?(user) %>
-                    <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
+                    <%= link_to 'Unfollow', unfollow_path(user), class: "btn btn-outline-dark", method: :POST %>
                   <% else %>
-                    <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
+                    <%= link_to 'Follow', follow_path(user), class: "btn btn-outline-dark", method: :POST %>
                   <% end %>
                 <% end %>
               </td>
