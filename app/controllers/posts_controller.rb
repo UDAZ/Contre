@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @genres = Genre.all
   end
   
   def create
