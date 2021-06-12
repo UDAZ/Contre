@@ -1,2 +1,31 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="col-12 mt-3">
+  <h4 class="display-5"><i class="fas fa-book mr-2"></i>Posts</h4>
+</div>
+<div class="col-12">
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex justify-content-center">
+        <h4 class="card-title">Posts</h4>
+      </div>
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>Genre</th>
+            <th>Title</th>
+            <th>Name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <td><%= post.genre.name %></td>
+              <td><%= post.title %></td>
+              <td><%= post.user.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
