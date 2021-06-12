@@ -16,3 +16,12 @@
     github_url: "https://github.com/test#{n + 1}"
   )
 end
+Genre.create([
+    {name: "AWS"},
+    {name: "HTML"},
+    {name: "CSS"},
+    {name: "Ruby"},
+    {name: "Rails"},
+    {name: "Javascript"},
+    {name: "その他"}
+])
