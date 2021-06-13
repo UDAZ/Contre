@@ -39,12 +39,4 @@
   </div>
 </div>
 <!-- リアルタイムプレビュー -->
-<script type="text/javascript">
-$(function() {
-var input = $('textarea');
-$(input).on('input', function(event) {
-    var value = $(input).val();
-    $('#editor').html(marked(value));
-  });
-});
-</script>
+<%= javascript_include_tag "preview.js" %>
