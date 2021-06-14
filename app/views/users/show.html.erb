@@ -39,6 +39,9 @@
         <div class="d-flex justify-content-between my-1">
           <%= link_to "Update Contributions", edit_user_path(@user.id), class: "btn btn-outline-dark w-100"%>
         </div>
+        <div class="d-flex justify-content-between my-1">
+          <%= link_to "New Post", new_post_path, class: "btn btn-outline-dark w-100"%>
+        </div>
       <% end %>
     </div>
   </div>
@@ -57,14 +60,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr>
+          <% @user.posts.each do |post| %>
+            <tr>
+              <td><%= post.genre.name %></td>
+              <td><%= link_to post_path(post) do %><%= post.title %><% end %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
