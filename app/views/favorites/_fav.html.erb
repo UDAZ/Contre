@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+<% if post.favorited_by?(current_user) %>
+  <%= link_to post_favorites_path(post), :style=>"color:red;", method: :delete, remote: true do %>
+    <%= '♥' + post.favorites.count.to_s %>
+  <% end %>
+<% else %>
+  <%= link_to post_favorites_path(post), :style=>"color:blue;", method: :post, remote: true do %>
+    <%= '♥' + post.favorites.count.to_s %>
+  <% end %>
+<% end %>
+<% else %>
+  <a href="#"><%= '♥' + post.favorites.count.to_s %></a>
+<% end %>
