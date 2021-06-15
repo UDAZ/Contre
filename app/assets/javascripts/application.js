@@ -17,6 +17,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
 
 // テキストエリアの高さ自動調整

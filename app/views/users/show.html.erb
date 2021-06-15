@@ -16,7 +16,7 @@
         <h4 class="card-title"><%= @user.contributions %></h4>
       </div>
       <span id="relation">
-      <%= render partial: 'relationships/relationship', locals: {user: @user} %>
+        <%= render partial: 'relationships/relationship', locals: {user: @user} %>
       </span>
       <% if @user == current_user %>
         <div class="d-flex justify-content-between my-1">
