@@ -22,7 +22,7 @@
               <td><%= post.genre.name %></td>
               <td><%= link_to post_path(post) do %><%= post.title %><% end %></td>
               <td><%= link_to user_path(post.user) do %><%= post.user.name %><% end %></td>
-              <td><%= render 'favorites/fav', post: post %></td>
+              <td id="favs_buttons_<%= post.id %>"><%= render 'favorites/fav', post: post %></td>
             </tr>
           <% end %>
         </tbody>

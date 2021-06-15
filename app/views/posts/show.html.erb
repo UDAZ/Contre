@@ -13,7 +13,7 @@
       <div class="col-11 mx-auto mb-3">
         <%= markdown(@post.body) %>
       </div>
-      <div class="col-11 mx-auto mb-3">
+      <div class="col-11 mx-auto mb-3" id="favs_buttons_<%= @post.id %>">
         <%= render 'favorites/fav', post: @post %>
       </div>
       <% if @post.user = current_user%>
