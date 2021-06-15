@@ -11,30 +11,13 @@
         <h4 class="card-title">Name</h4>
         <h4 class="card-title"><%= @user.name %></h4>
       </div>
-      <div class="d-flex justify-content-between">
+      <div id="contributions" class="d-flex justify-content-between">
         <h4 class="card-title">Contributions</h4>
         <h4 class="card-title"><%= @user.contributions %></h4>
       </div>
-      <div class="d-flex justify-content-between">
-        <h4 class="card-title">Follows</h4>
-        <h4 class="card-title"><%= link_to "#{@user.follower.count}", user_follows_path(@user.id) %></h4>
-      </div>
-      <div class="d-flex justify-content-between">
-        <h4 class="card-title">Followers</h4>
-        <h4 class="card-title"><%= link_to "#{@user.followed.count}", user_followers_path(@user.id) %></h4>
-      </div>
-      <div class="d-flex justify-content-between my-1">
-        <%= link_to "Visit GitHub", "#{@user.github_url}", class: "btn btn-dark w-100"%>
-      </div>
-      <% unless @user == current_user %>
-      <div class="d-flex justify-content-between my-1">
-        <% if current_user.following?(@user) %>
-          <%= link_to 'Unfollow', unfollow_path(@user.id), class: "btn btn-outline-dark w-100", method: :POST %>
-        <% else %>
-          <%= link_to 'Follow', follow_path(@user.id), class: "btn btn-outline-dark w-100", method: :POST %>
-        <% end %>
-      </div>
-      <% end %>
+      <span id="relation">
+      <%= render partial: 'relationships/relationship', locals: {user: @user} %>
+      </span>
       <% if @user == current_user %>
         <div class="d-flex justify-content-between my-1">
           <%= link_to "Update Contributions", edit_user_path(@user.id), class: "btn btn-outline-dark w-100"%>
