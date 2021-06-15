@@ -13,6 +13,9 @@
       <div class="col-11 mx-auto mb-3">
         <%= markdown(@post.body) %>
       </div>
+      <div class="col-11 mx-auto mb-3">
+        <%= render 'favorites/fav', post: @post %>
+      </div>
       <% if @post.user = current_user%>
         <div class="d-flex justify-content-center mb-3">
           <p class="card-text col-11">
