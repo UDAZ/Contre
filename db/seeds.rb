@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -9,19 +11,19 @@
   User.create!(
     name: "test#{n + 1}",
     uid: "11111#{n + 1}",
-    provider: "github",
+    provider: 'github',
     contributions: "20#{n + 1}",
     email: "test#{n + 1}@test.com",
-    password: "111111",
+    password: '111111',
     github_url: "https://github.com/test#{n + 1}"
   )
 end
 Genre.create([
-    {name: "AWS"},
-    {name: "HTML"},
-    {name: "CSS"},
-    {name: "Ruby"},
-    {name: "Rails"},
-    {name: "Javascript"},
-    {name: "その他"}
-])
+               { name: 'AWS' },
+               { name: 'HTML' },
+               { name: 'CSS' },
+               { name: 'Ruby' },
+               { name: 'Rails' },
+               { name: 'Javascript' },
+               { name: 'その他' }
+             ])

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -38,46 +40,46 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-rails' #デバッグ
-  gem 'pry-byebug' #デバッグ
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug' # デバッグ
+  gem 'pry-rails' # デバッグ
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-#Rspecによるテスト
+# Rspecによるテスト
 group :test do
   gem 'capybara', '>= 2.15'
   # gem 'selenium-webdriver'
   # gem 'chromedriver-helper'
-  gem 'rspec-rails' 
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'devise' #ユーザー管理
-gem 'omniauth' #oauth
-gem 'omniauth-github' #github用のoauth補助
-gem 'omniauth-rails_csrf_protection' #csrf_detected対策
-gem 'dotenv-rails' #環境変数登録
-gem 'bootstrap', '~> 4.5' #CSSフレームワーク
-gem 'kaminari','~> 1.2.1' #ページ送り
-gem 'jquery-rails' #jquery
-gem 'font-awesome-sass', '~> 5.13' #デコレーション
-gem 'rubocop' #インデント調整
-gem 'whenever', require: false #バッチ処理
-gem "refile", require: "refile/rails", github: 'manfe/refile' #画像処理
-gem "refile-mini_magick" #画像処理
-gem 'redcarpet' #マークダウン投稿導入
+gem 'bootstrap', '~> 4.5' # CSSフレームワーク
+gem 'devise' # ユーザー管理
+gem 'dotenv-rails' # 環境変数登録
+gem 'font-awesome-sass', '~> 5.13' # デコレーション
+gem 'jquery-rails' # jquery
+gem 'kaminari', '~> 1.2.1' # ページ送り
+gem 'omniauth' # oauth
+gem 'omniauth-github' # github用のoauth補助
+gem 'omniauth-rails_csrf_protection' # csrf_detected対策
+gem 'redcarpet' # マークダウン投稿導入
+gem 'refile', require: 'refile/rails', github: 'manfe/refile' # 画像処理
+gem 'refile-mini_magick' # 画像処理
+gem 'rubocop' # インデント調整
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'whenever', require: false # バッチ処理
 group :production do
   gem 'mysql2'
 end
