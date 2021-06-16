@@ -16,6 +16,9 @@
       <div class="col-11 mx-auto mb-3" id="favs_buttons_<%= @post.id %>">
         <%= render 'favorites/fav', post: @post %>
       </div>
+      <div class="col-11 mx-auto mb-3">
+        <%= render 'reports/report', post: @post %>
+      </div>
       <% if @post.user = current_user%>
         <div class="d-flex justify-content-center mb-3">
           <p class="card-text col-11">
@@ -27,3 +30,5 @@
     </div>
   </div>
 </div>
+<%= javascript_include_tag "modal-report.js" %>
+<%= stylesheet_link_tag "posts.css" %>
