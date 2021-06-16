@@ -30,47 +30,5 @@
     </div>
   </div>
 </div>
-<div class="modal js-modal">
-  <div class="modal__bg js-modal-close"></div>
-  <div class="modal__content col-10 col-lg-6">
-    <div class="d-flex justify-content-center">
-      <h4 class="card-title">通報</h4>
-    </div>
-    <%= form_with url: post_reports_path(@post), local:true do |f| %>
-      <div class="alert alert-dark" role="alert">
-        通報を送信しますと運営部が通報詳細を確認し、対応を行います。対応にはお時間を頂く場合がございますので予めご了承ください。
-      </div>
-      <div class="form-group">
-        <%= f.label :description, "通報詳細"%>
-        <%= f.text_area :description, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.submit "送信", class: 'btn btn-dark' %>
-      </div>
-    <% end %>
-    <a class="js-modal-close" href="">閉じる</a>
-  </div>
-</div>
-<script>
-jQuery(function(){
-jQuery('.js-modal-close').on('click',function(){
-jQuery('.js-modal').fadeOut();
-return false;
-});}); 
-function onPopupOpen() {
-jQuery(function(){
-jQuery('.js-modal').fadeIn();
-return false;
-}); 
-}
-jQuery(function(){
-jQuery('#repo').on('click',function(){
-onPopupOpen();
-});
-});
-</script>
-<style>
-.modal{display:none;height:100vh;position:fixed;top:0;width:100%}
-.modal__bg{background:rgba(0,0,0,.8);height:100vh;position:absolute;width:100%}
-.modal__content{background:#fff;left:50%;padding:30px;position:absolute;top:50%;transform:translate(-50%,-50%);}
-</style>
+<%= javascript_include_tag "modal-report.js" %>
+<%= stylesheet_link_tag "posts.css" %>
