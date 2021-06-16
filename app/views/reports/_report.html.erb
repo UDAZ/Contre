@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <% if post.reported_by?(current_user) %>
+    <p class="text-black-50">通報済みです。</p>
+  <% else %>
+    <a id="repo" class="text-black-50"><i class="fa fa-flag"></i>通報する</a>
+  <% end %>
+<% else %>
+<% end %>
