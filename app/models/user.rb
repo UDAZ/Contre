@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :follower_user, through: :followed, source: :follower #自分をフォローしている人
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :reports, dependent: :destroy
   # ユーザーをフォローする
   def follow(user_id)
     follower.create(followed_id: user_id)
