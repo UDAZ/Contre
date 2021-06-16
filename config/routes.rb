@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   resources :posts do
     resource :favorites, only: [:create, :destroy]
-    resource :favorites, only: [:create]
+    resource :reports, only: [:create]
   end
 end
