@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.page(params[:page]).per(10)
+    @posts = Post.all.includes([:genre],[:user]).page(params[:page]).per(10)
   end
 
   def new
