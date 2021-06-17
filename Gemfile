@@ -81,3 +81,4 @@ gem 'redcarpet' #マークダウン投稿導入
 group :production do
   gem 'mysql2'
 end
+gem 'bullet', :group => :development
