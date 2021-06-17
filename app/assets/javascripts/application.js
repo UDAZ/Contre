@@ -20,6 +20,7 @@
 //= require_tree ../../../vendor/assets/javascripts/.
 
 // テキストエリアの高さ自動調整
+$('.turbolinks-progress-bar').css('background-color:red;')
 $(document).on('turbolinks:load', function () {
   $("textarea").attr("rows", 3).on({
     // inputしたとき
