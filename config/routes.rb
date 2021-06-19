@@ -19,4 +19,5 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resource :reports, only: [:create]
   end
+  resources :notifications, only: :index
 end
