@@ -1,4 +1,10 @@
 ja:
+  header:
+    posts: 投稿一覧
+    ranking: ランキング
+    mypage: マイページ
+    notice: 通知
+    logout: ログアウト
   activerecord:
     errors:
       messages:

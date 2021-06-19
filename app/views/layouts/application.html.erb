@@ -20,24 +20,24 @@
           <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to '投稿一覧', posts_path, class: 'nav-link' %>
+              <%= link_to "#{t'header.posts'}", posts_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'ランキング', users_path, class: 'nav-link' %>
+              <%= link_to "#{t'header.ranking'}", users_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'マイページ', user_path(current_user), class: 'nav-link' %>
+              <%= link_to "#{t'header.mypage'}", user_path(current_user), class: 'nav-link' %>
             </li>
             <li class="nav-item">
                 <%= link_to notifications_path, class: "nav-link" do %>
-                  通知
+                  <%= t 'header.notice' %>
                   <% if unchecked_notifications.any? %>
                     <span>(新着<%= unchecked_notifications.count %>件)</span>
                   <% end %>
                 <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to 'ログアウト', destroy_user_session_path, class: 'nav-link', method: :delete %>
+              <%= link_to "#{t'header.logout'}", destroy_user_session_path, class: 'nav-link', method: :delete %>
             </li>
           <% else %>
             <li class="nav-item">

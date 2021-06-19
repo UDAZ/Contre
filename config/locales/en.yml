@@ -1,4 +1,10 @@
 en:
+  header:
+    posts: Posts
+    ranking: Ranking
+    mypage: My page
+    notice: Notice
+    logout: Logout
   activerecord:
     errors:
       messages:
