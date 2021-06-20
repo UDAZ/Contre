@@ -1,0 +1,5 @@
+if ( location.href.match(/follows/) || location.href.match(/followers/)) {
+$('#relationbtn_<%= @user.id %>').html("<%= j(render partial: 'relationships/relationbtn', locals: {user: @user}) %>");
+} else {
+$('#relation').html("<%= j(render partial: 'relationships/relationship', locals: {user: @user}) %>");
+}

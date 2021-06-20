@@ -16,3 +16,10 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+.turbolinks-progress-bar{
+  background-color: white !important;
+}
+div.wrap{
+  overflow: hidden;
+}
+main{min-height: 100vh;}

@@ -1,0 +1,12 @@
+<div class="col-12 mt-3">
+  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'notice.notice' %></h4>
+</div>
+<div class="col-12 mt-3">
+  <% if @notifications.exists? %>
+    <div class="list-group">
+      <%= render @notifications %>
+    </div>
+  <% else %>
+    <p><%= t'notice.nonotice' %></p>
+  <% end %>
+</div>

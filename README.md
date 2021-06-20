@@ -59,4 +59,4 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 ## 使用素材
 - 今後変更予定あり
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
-- https://unsplash.com/photos/4hbJ-eymZ1o
+- [Unsplash](https://unsplash.com/)

@@ -1,3 +1,29 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.fa-times-circle{
+  position:absolute;
+  top:-8%;
+  right:3%;
+}
+.modal{
+  display:none;
+  height:100vh;
+  position:fixed;
+  top:0;
+  width:100%;
+}
+.modal_bg{
+  background:rgba(0,0,0,.8);
+  height:100vh;
+  position:absolute;
+  width:100%;
+}
+.modal_content{
+  background:#fff;
+  left:50%;
+  padding:30px;
+  position:absolute;
+  top:50%;
+  transform:translate(-50%,-50%);
+}

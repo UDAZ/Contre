@@ -16,3 +16,17 @@
     github_url: "https://github.com/test#{n + 1}"
   )
 end
+Genre.create([
+    {name: "AWS"},
+    {name: "HTML"},
+    {name: "CSS"},
+    {name: "Ruby"},
+    {name: "Rails"},
+    {name: "Javascript"},
+    {name: "ポートフォリオ"},
+    {name: "その他"}
+])
+Notification.create([
+    {visiter_id: "11", visited_id: "12", action: "follow", created_at: "2021-06-19 13:19:56.788658", updated_at: "2021-06-19 13:19:56.788658"},
+    {visiter_id: "10", visited_id: "12", action: "follow", created_at: "2021-06-19 13:19:56.788658", updated_at: "2021-06-19 13:19:56.788658"},
+])

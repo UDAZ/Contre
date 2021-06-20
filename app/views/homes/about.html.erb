@@ -2,23 +2,25 @@
   <h4 class="display-5"><i class="fas fa-book mr-2"></i>About</h4>
 </div>
 <div class="jumbotron py-3 px-4 col-12 mt-3">
-  <h3 class="display-4 text-center">About こんとる</h3>
+  <h3 class="display-4 text-center">About <%= t'header.name' %></h3>
   <hr class="my-3">
   <div class="row justify-content-center">
-    <p>こんとるはgithubアカウントを使って楽しめる、プログラミング学習のモチベーション向上SNSです。<br>
-                    登録は簡単、手軽に楽しく以下の機能を楽しめます。</p>
+    <p>
+      <%= t'about.contreis' %><br>
+      <%= t'about.easytore' %>
+    </p>
   </div>
   <div class="row justify-content-center">
     <ul>
-      <li>コントリビューションの数に応じた称号アイコン機能</li>
-      <li>コントリビューションランキング機能</li>
-      <li>ユーザー間のフォロー・フォロワー機能</li>
-      <li>ユーザーによる投稿機能</li>
+      <li><%= t'about.iconfunc' %></li>
+      <li><%= t'about.ranking' %></li>
+      <li><%= t'about.relation' %></li>
+      <li><%= t'about.post' %></li>
     </ul>
   </div>
   <hr class="my-3">
-  <p class="text-center">詳細はこんとるのリポジトリでご確認ください</p>
+  <p class="text-center"><%= t'about.formore' %></p>
   <p class="lead text-center">
-    <a class="btn btn-outline-dark" href="https://github.com/UDAZ/Contre" role="button">Check in github</a>
+    <a class="btn btn-outline-dark" href="https://github.com/UDAZ/Contre" role="button">Check on GitHub</a>
   </p>
 </div>

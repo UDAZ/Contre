@@ -17,4 +17,18 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require_tree ../../../vendor/assets/javascripts/.
+
+// テキストエリアの高さ自動調整
+$(document).on('turbolinks:load', function () {
+  $("textarea").attr("rows", 3).on({
+    // inputしたとき
+    "input": function (e) {
+      $(e.target).height(0).innerHeight(e.target.scrollHeight);
+    },
+    // clickしたとき
+    "click": function (e) {
+      $(e.target).height(0).innerHeight(e.target.scrollHeight);
+    }
+  });
+});

@@ -1,18 +1,18 @@
-<div class="col-12 mt-3">
-  <h4 class="display-5"><i class="fas fa-book mr-2"></i>Contributions Ranking</h4>
+<div class="col-12 my-3">
+  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'ranking.cr' %></h4>
 </div>
-<div class="col-12">
-  <div class="card mt-3">
+<div class="col-12 mb-3">
+  <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-center">
-        <h4 class="card-title">Ranking</h4>
+        <h4 class="card-title"><%= t'ranking.rg' %></h4>
       </div>
       <table class="table">
         <thead class="thead-light">
           <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Contributions</th>
+            <th><%= t'ranking.r' %></th>
+            <th><%= t'ranking.name' %></th>
+            <th><%= t'ranking.cs' %></th>
             <th></th>
           </tr>
         </thead>
@@ -21,7 +21,26 @@
             <tr>
               <td><%= i %></td>
               <td><%= user.name %></td>
-              <td><%= user.contributions %></td>
+              <td>
+                <%= if user.contributions >= 3200
+                    image_tag '3200.svg', class: "img-fluid", style: "height:1.5rem;"
+                  elsif user.contributions >= 1600
+                    image_tag '1600.svg', class: "img-fluid", style: "height:1.5rem;"
+                  elsif user.contributions >= 800
+                    image_tag '800.svg', class: "img-fluid", style: "height:1.5rem;"
+                  elsif user.contributions >= 400
+                    image_tag '400.svg', class: "img-fluid", style: "height:1.5rem;"
+                  elsif user.contributions >= 200
+                    image_tag '200.svg', class: "img-fluid", style: "height:1.5rem;"
+                  elsif user.contributions >= 100
+                    image_tag '100.svg', class: "img-fluid", style: "height:1.5rem;"
+                  elsif user.contributions >= 10
+                    image_tag '10.svg', class: "img-fluid", style: "height:1.5rem;"
+                  elsif user.contributions >= 0
+                    image_tag '0.svg', class: "img-fluid", style: "height:1.5rem;"
+                end %>
+                <%= user.contributions %>
+              </td>
               <td class="p-1"><%= link_to 'Show', user_path(user), class: "btn btn-outline-dark" %></td>
             </tr>
           <% end %>

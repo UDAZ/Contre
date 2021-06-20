@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#top'
+  get "/change_language/:language" => "homes#change_language"
   post '/' => 'homes#top'
   get '/about' => 'homes#about'
   devise_for :users,only: [:omniauth_callback] , controllers: {
@@ -17,5 +18,7 @@ Rails.application.routes.draw do
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   resources :posts do
     resource :favorites, only: [:create, :destroy]
+    resource :reports, only: [:create]
   end
+  resources :notifications, only: :index
 end

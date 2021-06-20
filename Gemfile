@@ -77,6 +77,9 @@ gem 'rubocop' #インデント調整
 gem 'whenever', require: false #バッチ処理
 gem "refile", require: "refile/rails", github: 'manfe/refile' #画像処理
 gem "refile-mini_magick" #画像処理
+gem 'redcarpet' #マークダウン投稿導入
+gem 'rails-i18n', '~> 5.1'
 group :production do
   gem 'mysql2'
 end
+gem 'bullet', :group => :development

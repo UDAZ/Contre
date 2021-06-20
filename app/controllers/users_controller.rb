@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.includes([:genre]).page(params[:page]).per(10)
   end
   
   def edit
