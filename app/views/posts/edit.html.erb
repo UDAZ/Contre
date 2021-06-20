@@ -1,11 +1,11 @@
 <div class="col-12 mt-3">
-  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.post'%> / <%= t'posts.edit'%></h4>
+  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.post' %> / <%= t'posts.edit' %></h4>
 </div>
 <div class="col-12 col-lg-6 mx-auto">
   <div class="card mt-3 h-100">
     <div class="card-body">
       <div class="d-flex justify-content-center">
-        <h4 class="card-title"><%= t'posts.edit'%></h4>
+        <h4 class="card-title"><%= t'posts.edit' %></h4>
       </div>
       <%= form_with model:@post, local:true do |f| %>
         <div class="form-group">
@@ -31,10 +31,9 @@
   <div class="card mt-3 h-100">
     <div class="card-body">
       <div class="d-flex justify-content-center">
-        <h4 class="card-title"><%= t'posts.preview'%></h4>
+        <h4 class="card-title"><%= t'posts.preview' %></h4>
       </div>
-      <div id="editor"class="justify-content-center">
-      </div>
+      <div id="editor" class="justify-content-center"></div>
     </div>
   </div>
 </div>

@@ -17,11 +17,11 @@
         <h4 class="card-title"><%= @user.contributions %></h4>
       </div>
       <div class="d-flex justify-content-between">
-        <h4 class="card-title"><%= t'relation.follows'%></h4>
+        <h4 class="card-title"><%= t'relation.follows' %></h4>
         <h4 class="card-title"><%= link_to "#{@user.follower.count}", user_follows_path(@user.id) %></h4>
       </div>
       <div class="d-flex justify-content-between">
-        <h4 class="card-title"><%= t'relation.followers'%></h4>
+        <h4 class="card-title"><%= t'relation.followers' %></h4>
         <h4 class="card-title"><%= link_to "#{@user.followed.count}", user_followers_path(@user.id) %></h4>
       </div>
     <%= form_with model:@user, local:true do |f| %>
