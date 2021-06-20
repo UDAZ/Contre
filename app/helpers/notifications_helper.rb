@@ -1,13 +1,13 @@
 module NotificationsHelper
   def notification_form(notification)
     @visiter = notification.visiter
-    your_post = link_to 'あなたの投稿', post_path(notification), style:"font-weight: bold;"
+    your_post = link_to t('notice.yourpost'), post_path(notification), style:"font-weight: bold;"
     #notification.actionがfollowかfavか
     case notification.action
       when "follow" then
-        tag.a(notification.visiter.name, href:user_path(@visiter), style:"font-weight: bold;")+"があなたをフォローしました"
+        tag.a(notification.visiter.name, href:user_path(@visiter), style:"font-weight: bold;") + t('notice.followed')
       when "fav" then
-        tag.a(notification.visiter.name, href:user_path(@visiter), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:post_path(notification.post_id), style:"font-weight: bold;")+"にいいねしました"
+        tag.a(notification.visiter.name, href:user_path(@visiter), style:"font-weight: bold;") + t('notice.liked') + tag.a(t('notice.yourpost'), href:post_path(notification.post_id), style:"font-weight: bold;") + t('notice.good')
     end
   end
   def unchecked_notifications

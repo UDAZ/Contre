@@ -1,10 +1,69 @@
 ja:
   header:
+    name: こんとる
     posts: 投稿一覧
     ranking: ランキング
     mypage: マイページ
     notice: 通知
     logout: ログアウト
+    login: GitHubでログイン
+  top:
+    wwyd?: どうする？
+    contre?: こんとる？
+    contre: こんとる
+    ur: あなたは...
+  about:
+    contreis: こんとるはgithubアカウントを使って楽しめる、プログラミング学習のモチベーション向上SNSです。
+    easytore: 登録は簡単、手軽に楽しく以下の機能を楽しめます。
+    iconfunc: コントリビューションの数に応じた称号アイコン機能
+    ranking: コントリビューションランキング機能
+    relation: ユーザー間のフォロー・フォロワー機能
+    post: ユーザーによる投稿機能
+    formore: 詳細はこんとるのリポジトリでご確認ください
+  posts:
+    posts: 投稿一覧
+    post: 投稿
+    name: ユーザー名
+    edit: 編集
+    destroy: 削除
+    new: 新規投稿
+    submit: 送信
+    preview: プレビュー
+  ranking:
+    cr: コントリビューションランキング
+    rg: ランキング
+    r: ランク
+    name: ユーザー名
+    cs: コントリビューション
+  user:
+    user: ユーザー
+    profile: プロフィール
+    name: ユーザー名
+    cs: コントリビューション
+    posts: "の投稿"
+    uc: コントリビューション更新
+    np: 新規投稿
+    update: 更新
+  relation:
+    follows: フォロー
+    followers: フォロワー
+    vg: GitHubへ行く
+    follow: フォロー
+    unfollow: フォロー解除
+  report:
+    report: 通報
+    sendreport: 通報する
+    reported: 通報済みです。
+    reportnote: 通報を送信しますと運営部が通報詳細を確認し、必要な対応を行います。対応にはお時間を頂く場合がございますので予めご了承ください。
+    send: 送信
+  notice:
+    notice: 通知一覧
+    nonotice: 通知はありません。
+    ago: 前
+    yourpost: あなたの投稿
+    liked: が
+    good: にいいねしました
+    followed: があなたをフォローしました
   activerecord:
     errors:
       messages:
@@ -35,6 +94,7 @@ ja:
         genre_id: ジャンルID
         title: タイトル
         body: 本文
+        genre: ジャンル
       relationship:
         follower_id: フォローしたユーザーID
         followed_id: フォローされたユーザーID

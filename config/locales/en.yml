@@ -1,10 +1,69 @@
 en:
   header:
+    name: Contre
     posts: Posts
     ranking: Ranking
     mypage: My page
     notice: Notice
     logout: Logout
+    login: Sign in with Github
+  top:
+    wwyd?: What will you do?
+    contre?: Contribute?
+    contre: Contribute
+    ur: You are...
+  about:
+    contreis: Contre is a motivational social network for learning programming that you can enjoy using your github account.
+    easytore: It's easy to register, and you can enjoy the following features.
+    iconfunc: Title icon function based on the number of contributions.
+    ranking: Contributions ranking function.
+    relation: Follow and Follow function between users.
+    post: Post function.
+    formore: For more information, please visit the Contre repository.
+  posts:
+    posts: Posts
+    post: Post
+    name: Name
+    edit: Edit
+    destroy: Destroy
+    new: New Post
+    submit: Submit
+    preview: Preview
+  ranking:
+    cr: Contribution Ranking
+    rg: Ranking
+    r: Rank
+    name: Name
+    cs: Contributions
+  user:
+    user: User
+    profile: Profile
+    name: Name
+    cs: Contributions
+    posts: "'s Posts"
+    uc: Update Contributions
+    np: New Post
+    update: Update
+  relation:
+    follows: Follows
+    followers: Followers
+    vg: Visit GitHub
+    follow: Follow
+    unfollow: Unfollow
+  report:
+    report: Report
+    sendreport: Send report
+    reported: It's been reported.
+    reportnote: Once the report is sent, the operation department will check the details of the report and take action.
+    send: Send
+  notice:
+    notice: Notice
+    nounread: There are no notifications.
+    ago: ago
+    yourpost: your post
+    liked: " has liked "
+    good: ""
+    followed:  " has followed you"
   activerecord:
     errors:
       messages:
@@ -33,8 +92,9 @@ en:
       post:
         user_id: user_id
         genre_id: genre_id
-        title: title
-        body: body
+        title: Title
+        body: Body
+        genre: Genre
       relationship:
         follower_id: follower_id
         followed_id: followed_id
