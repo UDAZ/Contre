@@ -1,15 +1,15 @@
 <%= stylesheet_link_tag "homes.css" %>
 <div class="col-12 justify-content-center">
-  <h1 class="top-title my-5">どうする？<br>こんとる？</h1>
+  <h1 class="top-title my-5"><%= t'top.wwyd?'%><br><%= t'top.contre?'%></h1>
 </div>
 <div class="col-11 col-sm-8 col-lg-6 mx-auto">
   <%= form_with url: root_path, class: "form-inline", local:true do |f| %>
       <%= f.text_field :name, placeholder: "Github username",value: "#{params[:name]}", class: "form-control col-12 col-sm-8" %>
-      <%= f.submit "こんとる", class: 'mt-sm-0 mt-2 btn btn-dark col-12 col-sm-4' %>
+      <%= f.submit "#{t'top.contre'}", class: 'mt-sm-0 mt-2 btn btn-dark col-12 col-sm-4' %>
   <% end %>
 </div>
 <div class="col-12 justify-content-center">
-  <h1 class="top-body mt-5">あなたは...</h1>
+  <h1 class="top-body mt-5"><%= t'top.ur' %></h1>
   <% if params[:name].present? %>
   <h1 class="top-body my-2"><%= @contributions %></h1>
   <% else %>

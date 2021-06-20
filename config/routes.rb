@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#top'
+  get "/change_language/:language" => "homes#change_language"
   post '/' => 'homes#top'
   get '/about' => 'homes#about'
   devise_for :users,only: [:omniauth_callback] , controllers: {
