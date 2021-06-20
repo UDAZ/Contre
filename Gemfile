@@ -73,7 +73,7 @@ gem 'bootstrap', '~> 4.5' #CSSフレームワーク
 gem 'kaminari','~> 1.2.1' #ページ送り
 gem 'jquery-rails' #jquery
 gem 'font-awesome-sass', '~> 5.13' #デコレーション
-gem 'rubocop' #インデント調整
+gem 'rubocop-airbnb' #インデント調整
 gem 'whenever', require: false #バッチ処理
 gem "refile", require: "refile/rails", github: 'manfe/refile' #画像処理
 gem "refile-mini_magick" #画像処理
