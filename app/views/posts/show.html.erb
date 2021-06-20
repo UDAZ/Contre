@@ -1,5 +1,5 @@
 <div class="col-12 mt-3">
-  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.post'%> / <%= @post.title %></h4>
+  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.post' %> / <%= @post.title %></h4>
 </div>
 <div class="col-12 col-lg-8 mx-auto">
   <div class="card mt-3">
@@ -19,7 +19,7 @@
       <div class="col-11 mx-auto mb-3">
         <%= render 'reports/report', post: @post %>
       </div>
-      <% if @post.user = current_user%>
+      <% if @post.user = current_user %>
         <div class="d-flex justify-content-center mb-3">
           <p class="card-text col-11">
             <%= link_to "#{t'posts.edit'}", edit_post_path(@post) %>
