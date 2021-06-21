@@ -39,6 +39,9 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 [アプリケーション詳細設計](https://drive.google.com/file/d/1su5fwNQsVmKnboMcc1U6SkYwetNoEraD/view?usp=sharing)
 
 [WBS](https://docs.google.com/spreadsheets/d/1ZpONUmYHL5hzEsi-cxXr5efgdTL8TiOaQn3oZR2_ns4/edit?usp=sharing)
+
+[テスト ](https://docs.google.com/spreadsheets/d/1Xy1fk36dechaQ8fWusJL5-KG7MOkqWQifz4bDf4so88/edit?usp=sharing)
+
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1L9VLEDx7Kn395DUjN9YTIxR6k_0ctQEnXS4-DJYapfk/edit?usp=sharing>
 
@@ -57,6 +60,5 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 - IDE：Visual Stuido Code
 
 ## 使用素材
-- 今後変更予定あり
-- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
 - [Unsplash](https://unsplash.com/)
+- [ICOOON MONO](https://icooon-mono.com/)
