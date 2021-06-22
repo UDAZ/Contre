@@ -20,7 +20,7 @@
           <% @posts.each do |post| %>
             <tr>
               <td><%= post.genre.name %></td>
-              <td><%= link_to post_path(post) do %><%= post.title %><% end %></td>
+              <td><%= link_to post_path(post) do %><% if post.title.length >= 5 %><%= post.title.slice(0..12).insert(-1, "…") %><% else %><%= post.title %><% end %><% end %></td>
               <td><%= link_to user_path(post.user) do %><%= post.user.name %><% end %></td>
               <td id="favs_buttons_<%= post.id %>"><%= render 'favorites/fav', post: post %></td>
             </tr>
