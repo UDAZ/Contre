@@ -33,6 +33,9 @@ ja:
     genreplace: --選択してください--
     mdnotation: " (md記法が使えます)"
     bodyplace: 本文を記入してください
+    newsuccess: 新規投稿に成功しました。
+    editsuccess: 投稿編集に成功しました。
+    deletesuccess: 投稿削除に成功しました。
   ranking:
     cr: コントリビューションランキング
     rg: ランキング
