@@ -13,8 +13,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to post_path(@post)
+    @genres = Genre.all
+    if @post.save
+      redirect_to post_path(@post), notice: 'The post was successfully posted.新規投稿に成功しました。'
+    else
+      flash.now[:alert] = @post.errors.full_messages
+      render :new
+    end
   end
 
   def edit
@@ -24,14 +29,19 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to post_path(@post)
+    @genres = Genre.all
+    if @post.update(post_params)
+      redirect_to post_path(@post), notice: 'The post was successfully edited.投稿編集に成功しました。'
+    else
+      flash.now[:alert] = @post.errors.full_messages
+      render :edit
+    end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to user_path(@post.user)
+    redirect_to user_path(@post.user), notice: 'The post was successfully deleted.投稿削除に成功しました。'
   end
 
   def show

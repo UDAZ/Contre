@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :genre
   belongs_to :user
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :genre, presence: true
   has_many :favorites, dependent: :destroy
   has_many :reports, dependent: :destroy
   has_many :notifications, dependent: :destroy
