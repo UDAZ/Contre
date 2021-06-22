@@ -31,3 +31,17 @@
     </div>
   </div>
 </div>
+<% unless user_signed_in? %>
+  <div class="modal js-modal-fav">
+  <div class="modal_bg js-modal-close-fav"></div>
+    <div class="modal_content col-10 col-lg-6">
+      <i class="fa fa-times-circle text-white js-modal-close-fav" aria-hidden="true"></i>
+      <div class="d-flex justify-content-center">
+        <h4 class="card-title">ぜひご登録を！</h4>
+      </div>
+      <p>GitHubアカウントでログインすると「いいね」など様々な機能をお使い頂けます。<%= link_to "#{t'header.login'}", user_github_omniauth_authorize_path, method: :post %></p>
+    </div>
+  </div>
+<% end %>
+<%= javascript_include_tag "modal-fav.js" %>
+<%= stylesheet_link_tag "posts.css" %>
