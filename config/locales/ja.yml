@@ -29,6 +29,10 @@ ja:
     new: 新規投稿
     submit: 送信
     preview: プレビュー
+    titleplace: タイトルを記入してください
+    genreplace: --選択してください--
+    mdnotation: " (md記法が使えます)"
+    bodyplace: 本文を記入してください
   ranking:
     cr: コントリビューションランキング
     rg: ランキング
