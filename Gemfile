@@ -56,9 +56,10 @@ end
 
 #Rspecによるテスト
 group :test do
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   # gem 'selenium-webdriver'
   # gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'rspec-rails' 
   gem "factory_bot_rails"
   gem 'faker'
