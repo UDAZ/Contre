@@ -136,6 +136,9 @@ describe '[ログイン前]' do
       it '投稿一覧画面のURLは/postsである' do
         expect(current_path).to eq '/posts'
       end
+      it '長すぎるタイトルは13文字と...になっている' do
+        expect(page).to have_text(/…/i)
+      end
     end
     context '日本語版の確認' do
       before do
@@ -153,6 +156,18 @@ describe '[ログイン前]' do
       end
       it '英語版だと、Genreの記載がある。' do
         expect(page).to have_text 'Genre'
+      end
+    end
+    context '動作の確認' do
+      it 'Goodボタン、favoritesは動作しない' do
+        button = find_by_id('favs_buttons_1')
+        button.click
+        expect(button).not_to have_text '1'        
+      end
+      it 'Goodボタンを押しても何も起きない、登録を促すmodalがでる' do
+        button = find_by_id('favs_buttons_1')
+        button.click
+        expect(find('.modal')).to be_visible 
       end
     end
   end
