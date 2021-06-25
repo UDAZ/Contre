@@ -29,6 +29,13 @@ en:
     new: New Post
     submit: Submit
     preview: Preview
+    titleplace: Please fill in the title
+    genreplace: --Please choose--
+    mdnotation: " (md notation can be used)"
+    bodyplace: Please fill in the body
+    newsuccess: The post was successfully posted.
+    editsuccess: The post was successfully edited.
+    deletesuccess: The post was successfully deleted.
   ranking:
     cr: Contribution Ranking
     rg: Ranking

@@ -1,7 +1,7 @@
 <div class="col-12 mt-3">
-  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.post' %> / <%= @post.title %></h4>
+  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.post' %> / <% if @post.title.length >= 5 %><%= @post.title.slice(0..12).insert(-1, "…") %><% else %><%= @post.title %><% end %></h4>
 </div>
-<div class="col-12 col-lg-8 mx-auto">
+<div class="col-12 mb-3 col-lg-8 mx-auto">
   <div class="card mt-3">
     <div class="card-body">
       <div class="d-flex justify-content-center">
@@ -10,7 +10,7 @@
       <div class="d-flex justify-content-center mb-3">
         <p class="card-text"><%= @post.genre.name %></p>
       </div>
-      <div class="col-11 mx-auto mb-3">
+      <div class="col-11 mx-auto mb-3 markdown">
         <%= markdown(@post.body) %>
       </div>
       <div class="col-11 mx-auto mb-3" id="favs_buttons_<%= @post.id %>">
@@ -30,5 +30,49 @@
     </div>
   </div>
 </div>
-<%= javascript_include_tag "modal-report.js" %>
+<div class="col-12 mb-3 col-lg-8 mx-auto">
+  <div class="card h-100">
+    <div class="card-body d-flex">
+      <div class="col-3">
+        <div class="row justify-content-center">
+          <div class="col-12"><%= showconimg %></div>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><%= t'user.name' %></p>
+          <p class="card-text"><%= @user.name %></p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><%= t'user.cs' %></p>
+          <p class="card-text"><%= @user.contributions %></p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><%= t'relation.follows' %></p>
+          <p class="card-text"><%= link_to "#{@user.follower.count}", user_follows_path(@user.id) %></p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><%= t'relation.followers' %></p>
+          <p class="card-text"><%= link_to "#{@user.followed.count}", user_followers_path(@user.id) %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <%= link_to "#{t'relation.vg'}", "#{@user.github_url}", class: "btn btn-dark w-100" %>
+    </div>
+  </div>
+</div>
+<% unless user_signed_in? %>
+  <div class="modal js-modal-fav">
+  <div class="modal_bg js-modal-close-fav"></div>
+    <div class="modal_content col-10 col-lg-6">
+      <i class="fa fa-times-circle text-white js-modal-close-fav" aria-hidden="true"></i>
+      <div class="d-flex justify-content-center">
+        <h4 class="card-title">ぜひご登録を！</h4>
+      </div>
+      <p>GitHubアカウントでログインすると「いいね」など様々な機能をお使い頂けます。<%= link_to "#{t'header.login'}", user_github_omniauth_authorize_path, method: :post %></p>
+    </div>
+  </div>
+<% end %>
+<%= javascript_include_tag "modal-fav.js", "modal-report.js" %>
 <%= stylesheet_link_tag "posts.css" %>

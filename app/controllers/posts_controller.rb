@@ -13,8 +13,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to post_path(@post)
+    @genres = Genre.all
+    if @post.save
+      redirect_to post_path(@post), notice: "#{t'posts.newsuccess'}"
+    else
+      flash.now[:alert] = @post.errors.full_messages
+      render :new
+    end
   end
 
   def edit
@@ -24,14 +29,19 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to post_path(@post)
+    @genres = Genre.all
+    if @post.update(post_params)
+      redirect_to post_path(@post), notice: "#{t'posts.editsuccess'}"
+    else
+      flash.now[:alert] = @post.errors.full_messages
+      render :edit
+    end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to user_path(@post.user)
+    redirect_to user_path(@post.user), notice: "#{t'posts.deletesuccess'}"
   end
 
   def show

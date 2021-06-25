@@ -17,9 +17,15 @@
           </tr>
         </thead>
         <tbody>
-          <% @user.following_user.each do |user| %>
-            <tr id="relationbtn_<%= user.id %>">
-              <%= render partial: 'relationships/relationbtn', locals: {user: user} %>
+          <% if @user.following_user.any? %>
+            <% @user.following_user.each do |user| %>
+              <tr id="relationbtn_<%= user.id %>">
+                <%= render partial: 'relationships/relationbtn', locals: {user: user} %>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr>
+              <td colspan="3" class="text-center">このユーザーのフォローは0です。</td>
             </tr>
           <% end %>
         </tbody>

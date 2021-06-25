@@ -30,3 +30,11 @@ Notification.create([
     {visiter_id: "11", visited_id: "12", action: "follow", created_at: "2021-06-19 13:19:56.788658", updated_at: "2021-06-19 13:19:56.788658"},
     {visiter_id: "10", visited_id: "12", action: "follow", created_at: "2021-06-19 13:19:56.788658", updated_at: "2021-06-19 13:19:56.788658"},
 ])
+
+Post.create([
+    {title: "11", genre_id: "2", user_id: "1", body: "follow me"},
+    {title: "11111111111111111111111111111111", genre_id: "2", user_id: "2", body: "follow me"}
+])
+Relationship.create([
+  {follower_id: "2", followed_id: "1"}
+])
