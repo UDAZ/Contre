@@ -35,3 +35,6 @@ Post.create([
     {title: "11", genre_id: "2", user_id: "1", body: "follow me"},
     {title: "11111111111111111111111111111111", genre_id: "2", user_id: "2", body: "follow me"}
 ])
+Relationship.create([
+  {follower_id: "2", followed_id: "1"}
+])
