@@ -78,13 +78,13 @@ describe '[ログイン前]' do
       end
       it 'input id=”name”に「UDAZ」と入力してSubmitをクリックすると0以外の数字が記載されたトップに移動する。' do
         fill_in 'name', with: 'UDAZ'
-        click_button 'こんとる'
-        contre_field = find_all('h1')[2].native.inner_text
+        click_button 'こんとる', wait: 5
+        contre_field = find('h1#contributions').text
         expect(contre_field).to match(/\+?[1-9][0-9]/i)
       end
       it 'input id=”name”に「あああ」と入力してSubmitをクリックするとErrorが記載されたトップに移動する。' do
         fill_in 'name', with: 'あああ'
-        click_button 'こんとる'
+        click_button 'こんとる', wait: 5
         expect(page).to have_text 'Error'
       end
     end
@@ -160,12 +160,14 @@ describe '[ログイン前]' do
     end
     context '動作の確認' do
       it 'Goodボタン、favoritesは動作しない' do
-        button = find_by_id('favs_buttons_1')
+        buttonarea = find_by_id('favs_buttons_1')
+        button = buttonarea.find('a.fav')
         button.click
         expect(button).not_to have_text '1'        
       end
       it 'Goodボタンを押しても何も起きない、登録を促すmodalがでる' do
-        button = find_by_id('favs_buttons_1')
+        buttonarea = find_by_id('favs_buttons_1')
+        button = buttonarea.find('a.fav')
         button.click
         expect(find('.modal')).to be_visible 
       end
@@ -187,6 +189,8 @@ describe '[ログイン前]' do
         expect(find('.markdown'))
       end
       it '投稿したユーザーの情報が表示されている' do
+        visit '/change_language/en'
+        visit post_path(2)
         expect(page).to have_text 'Name'
       end
     end
@@ -214,8 +218,8 @@ describe '[ログイン前]' do
         button.click
         expect(button).not_to have_text '1'        
       end
-      it 'Goodボタンを押しても何も起きない、登録を促すmodalがでる' do
-        button = find_by_id('favs_buttons_2')
+      it 'Goodボタンを押しても何も起きない、登録を促すmodalがでる', js: true do
+        button = find('a.fav')
         button.click
         expect(find('.modal')).to be_visible 
       end
