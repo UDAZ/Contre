@@ -7,6 +7,10 @@ en:
     notice: Notice
     logout: Logout
     login: Sign in with Github
+    guestlogin: Sign in as Guest
+    newleft: "(new: "
+    newright: ")"
+    guestmessage: "You have successfully guest logged in"
   top:
     wwyd?: What will you do?
     contre?: Contribute?
@@ -29,6 +33,14 @@ en:
     new: New Post
     submit: Submit
     preview: Preview
+    titleplace: Please fill in the title
+    genreplace: --Please choose--
+    mdnotation: " (md notation can be used)"
+    bodyplace: Please fill in the body
+    newsuccess: The post was successfully posted.
+    editsuccess: The post was successfully edited.
+    deletesuccess: The post was successfully deleted.
+    hasposted: " posted."
   ranking:
     cr: Contribution Ranking
     rg: Ranking
@@ -42,8 +54,10 @@ en:
     cs: Contributions
     posts: "'s Posts"
     uc: Update Contributions
+    uca: '*A recount is performed on the first day of each month.'
     np: New Post
     update: Update
+    updated: You have updated contributions successfully.
   relation:
     follows: Follows
     followers: Followers
@@ -56,10 +70,11 @@ en:
     reported: It's been reported.
     reportnote: Once the report is sent, the operation department will check the details of the report and take action.
     send: Send
+    reportsuccess: You have successfully reported.
   notice:
     notice: Notice
     nounread: There are no notifications.
-    ago: ago
+    ago: " ago"
     yourpost: your post
     liked: " has liked "
     good: ""

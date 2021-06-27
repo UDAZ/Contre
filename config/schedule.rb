@@ -23,7 +23,7 @@ require File.expand_path(File.dirname(__FILE__) + "/environment")
 rails_env = Rails.env.to_sym
 set :environment, rails_env
 set :output, 'log/cron.log'
-every 2.minute do
+every 1.month, at: 'start of the month at 0am' do
   begin
     runner "Batch::AutoUpdateContribution.auto_update_contribution"
   rescue => e

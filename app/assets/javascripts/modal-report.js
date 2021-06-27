@@ -1,17 +1,17 @@
 jQuery(function () {
-  jQuery('.js-modal-close').on('click', function () {
-    jQuery('.js-modal').fadeOut();
+  jQuery('.js-modal-close-repo').on('click', function () {
+    jQuery('.js-modal-repo').fadeOut();
     return false;
   });
 });
-function onPopupOpen() {
+function onPopupOpenRepo() {
   jQuery(function () {
-    jQuery('.js-modal').fadeIn();
+    jQuery('.js-modal-repo').fadeIn();
     return false;
   });
 }
 jQuery(function () {
   jQuery('#repo').on('click', function () {
-    onPopupOpen();
+    onPopupOpenRepo();
   });
 });
