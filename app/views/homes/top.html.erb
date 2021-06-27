@@ -10,9 +10,9 @@
 <div class="col-12 justify-content-center">
   <h1 class="top-body mt-5"><%= t'top.ur' %></h1>
   <% if params[:name].present? %>
-  <h1 class="top-body my-2"><%= @contributions %></h1>
+    <h1 id="contributions" class="top-body my-2"><%= @contributions %></h1>
   <% else %>
-  <h1 class="top-body my-2">0</h1>
+    <h1 id="contributions" class="top-body my-2">0</h1>
   <% end %>
   <h1 class="top-body my-2">Contributions</h1>
 </div>

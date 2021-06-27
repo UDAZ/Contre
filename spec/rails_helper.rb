@@ -68,5 +68,5 @@ RSpec.configure do |config|
   # config.include FactoryBot::Syntax::Methods
   # deviseで使うヘルパー
   # config.include Devise::Test::ControllerHelpers, type: :controller
-  # config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :system
 end
