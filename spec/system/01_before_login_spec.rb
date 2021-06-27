@@ -218,7 +218,7 @@ describe '[ログイン前]' do
         button.click
         expect(button).not_to have_text '1'        
       end
-      it 'Goodボタンを押しても何も起きない、登録を促すmodalがでる', js: true do
+      it 'Goodボタンを押しても何も起きない、登録を促すmodalがでる' do
         button = find('a.fav')
         button.click
         expect(find('.modal')).to be_visible 
