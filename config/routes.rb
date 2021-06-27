@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     delete 'users/sign_out' => 'devise/sessions#destroy', as: :destroy_user_session
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest', as: :guest_user_session
   end
   get '/ranking' => 'users#index', as: :users
   resources :users,only: [:show,:edit,:update] do

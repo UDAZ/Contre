@@ -67,4 +67,7 @@ class User < ApplicationRecord
       user.contributions = response.body.gsub(/[^\d]/, '').to_i
     end
   end
+  def self.guest
+    find_by(email: "test@com")
+  end
 end
