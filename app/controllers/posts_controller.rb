@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :ensure_correct_user, only:[:edit]
   def index
     @posts = Post.all.includes([:genre], [:user]).page(params[:page]).per(10)
