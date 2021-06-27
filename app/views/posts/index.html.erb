@@ -1,34 +1,29 @@
 <div class="col-12 my-3">
   <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.posts' %></h4>
 </div>
-<div class="col-12 mb-3">
+<div class="col-12 col-md-8 mb-3 mx-auto">
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-center">
         <h4 class="card-title"><%= t'posts.posts' %></h4>
       </div>
-      <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th><%= t'activerecord.models.genre' %></th>
-            <th><%= t'activerecord.attributes.post.title' %></th>
-            <th><%= t'posts.name' %></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @posts.each do |post| %>
-            <tr>
-              <td><%= post.genre.name %></td>
-              <td><%= link_to post_path(post), class: "post-title" do %><% if post.title.length >= 5 %><%= post.title.slice(0..12).insert(-1, "…") %><% else %><%= post.title %><% end %><% end %></td>
-              <td><%= link_to user_path(post.user) do %><%= post.user.name %><% end %></td>
-              <td id="favs_buttons_<%= post.id %>"><%= render 'favorites/fav', post: post %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <%= paginate @posts %>
+      <div class="list-group">
+        <% @posts.each do |post| %>
+          <div class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between">
+              <small><%= link_to user_path(post.user), class: "text-muted" do %><%= post.user.name %><% end %>が投稿</small>
+              <small class="text-muted"><%= " (#{time_ago_in_words(post.created_at)}#{t'notice.ago'})" %></small>
+            </div>
+              <div class="mt-2 mb-1"><%= link_to post_path(post), class: "post-title text-dark font-weight-bold" do %><% if post.title.length >= 5 %><%= post.title.slice(0..12).insert(-1, "…") %><% else %><%= post.title %><% end %><% end %></div>
+            <div class="d-flex justify-content-between">
+              <small class="align-self-end"><%= t'activerecord.models.genre' %>：<%= post.genre.name %></small>
+              <div id="favs_buttons_<%= post.id %>"><%= render 'favorites/fav', post: post %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
+    <%= paginate @posts %>
   </div>
 </div>
 <% unless user_signed_in? %>

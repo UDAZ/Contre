@@ -16,6 +16,12 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+ 
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 100%;
+}
 .turbolinks-progress-bar{
   background-color: white !important;
 }
