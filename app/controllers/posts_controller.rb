@@ -4,7 +4,17 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :ensure_correct_user, only:[:edit]
   def index
-    @posts = Post.all.includes([:genre], [:user]).page(params[:page]).per(10)
+    # urlにgenre_name(params)がある場合
+    if params[:genre]
+      # ?name=プリンとしたら
+      @genre = Genre.find_by(:name => params[:genre])
+        
+      # genre_idと紐づく投稿を取得
+      @posts = @genre.posts.includes([:user]).page(params[:page]).per(10)
+    else
+      # 投稿すべてを取得
+      @posts = Post.all.includes([:genre], [:user]).page(params[:page]).per(10)
+    end
   end
 
   def new
