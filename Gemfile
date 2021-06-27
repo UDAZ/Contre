@@ -60,7 +60,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails' 
   gem "factory_bot_rails"
-  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -83,3 +82,4 @@ group :production do
 end
 gem 'bullet', :group => :development
 gem 'rails-i18n'
+gem 'faker'
