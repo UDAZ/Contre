@@ -7,6 +7,8 @@ en:
     notice: Notice
     logout: Logout
     login: Sign in with Github
+    newleft: "(new: "
+    newright: ")"
   top:
     wwyd?: What will you do?
     contre?: Contribute?
@@ -36,6 +38,7 @@ en:
     newsuccess: The post was successfully posted.
     editsuccess: The post was successfully edited.
     deletesuccess: The post was successfully deleted.
+    hasposted: " posted."
   ranking:
     cr: Contribution Ranking
     rg: Ranking
@@ -66,7 +69,7 @@ en:
   notice:
     notice: Notice
     nounread: There are no notifications.
-    ago: ago
+    ago: " ago"
     yourpost: your post
     liked: " has liked "
     good: ""

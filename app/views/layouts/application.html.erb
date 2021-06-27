@@ -63,7 +63,7 @@
                   <%= link_to notifications_path, class: "nav-link" do %>
                     <%= t'header.notice' %>
                     <% if unchecked_notifications.any? %>
-                      <span>(新着<%= unchecked_notifications.count %>件)</span>
+                      <span><%= t'header.newleft' %><%= unchecked_notifications.count %><%= t'header.newright' %></span>
                     <% end %>
                   <% end %>
                 </li>

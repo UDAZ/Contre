@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
 <% if post.favorited_by?(current_user) %>
-  <%= link_to post_favorites_path(post), :style=>"color:red;", class: "fav", method: :delete, remote: true do %>
+  <%= link_to post_favorites_path(post), class: "fav text-success", method: :delete, remote: true do %>
     <i class='far fa-thumbs-up'></i><%= post.favorites.count.to_s %>
   <% end %>
 <% else %>
-  <%= link_to post_favorites_path(post), :style=>"color:blue;", class: "fav", method: :post, remote: true do %>
+  <%= link_to post_favorites_path(post), class: "fav text-muted", method: :post, remote: true do %>
     <i class='far fa-thumbs-up'></i><%= post.favorites.count.to_s %>
   <% end %>
 <% end %>
 <% else %>
-  <a class="fav"><i class="far fa-thumbs-up"></i><%= post.favorites.count.to_s %></a>
+  <a class="fav text-muted"><i class="far fa-thumbs-up"></i><%= post.favorites.count.to_s %></a>
 <% end %>

@@ -7,6 +7,8 @@ ja:
     notice: 通知
     logout: ログアウト
     login: GitHubでログイン
+    newleft: "(新着"
+    newright: "件)"
   top:
     wwyd?: どうする？
     contre?: こんとる？
@@ -36,6 +38,7 @@ ja:
     newsuccess: 新規投稿に成功しました。
     editsuccess: 投稿編集に成功しました。
     deletesuccess: 投稿削除に成功しました。
+    hasposted: "が投稿しました。"
   ranking:
     cr: コントリビューションランキング
     rg: ランキング
