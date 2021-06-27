@@ -54,6 +54,7 @@ en:
     cs: Contributions
     posts: "'s Posts"
     uc: Update Contributions
+    uca: '*A recount is performed on the first day of each month.'
     np: New Post
     update: Update
     updated: You have updated contributions successfully.
