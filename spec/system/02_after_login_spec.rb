@@ -7,7 +7,8 @@ describe '[ログイン後]' do
     @user = FactoryBot.create(:user, :a)
     @second_user = FactoryBot.create(:user, :b)
     @third_user = FactoryBot.create(:user, :c)
-    @post = FactoryBot.create(:post, user_id: @user.id)
+    @post = FactoryBot.create(:post, :a, user_id: @user.id)
+    @second_post = FactoryBot.create(:post, :b, user_id: @user.id)
   end
   describe '[ヘッダー]' do
     before do

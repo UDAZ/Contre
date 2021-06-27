@@ -2,6 +2,15 @@
 require 'rails_helper'
 
 describe '[ログイン前]' do
+  before do
+    #テスト用データを読み込む
+    @user = FactoryBot.create(:user, :a)
+    @second_user = FactoryBot.create(:user, :b)
+    @third_user = FactoryBot.create(:user, :c)
+    @post = FactoryBot.create(:post, :a, user_id: @user.id)
+    @second_post = FactoryBot.create(:post, :b, user_id: @second_user.id)
+    @relation = FactoryBot.create(:relationship, follower_id: @user.id, followed_id: @second_user.id)
+  end
   describe '[ヘッダー]' do
     before do
       visit root_path
@@ -175,12 +184,12 @@ describe '[ログイン前]' do
   end
   describe '[投稿詳細]' do
     before do
-      visit post_path(2)
+      visit post_path(@post)
     end
 
     context '表示内容の確認' do
       it '投稿詳細画面のURLは/posts/1である。' do
-        expect(current_path).to eq '/posts/2'
+        expect(current_path).to eq "/posts/#{@post.id}"
       end
       it '長すぎるタイトルは13文字と...になっている' do
         expect(page).to have_text(/…/i)
@@ -190,14 +199,14 @@ describe '[ログイン前]' do
       end
       it '投稿したユーザーの情報が表示されている' do
         visit '/change_language/en'
-        visit post_path(2)
+        visit post_path(@post)
         expect(page).to have_text 'Name'
       end
     end
     context '日本語版の確認' do
       before do
         visit '/change_language/ja'
-        visit post_path(2)
+        visit post_path(@post)
       end
       it '日本語版だと、投稿の記載がある。' do
         expect(page).to have_text '投稿'
@@ -206,7 +215,7 @@ describe '[ログイン前]' do
     context '英語版の確認' do
       before do
         visit '/change_language/en'
-        visit post_path(2)
+        visit post_path(@post)
       end
       it '英語版だと、Postの記載がある。' do
         expect(page).to have_text 'Post'
@@ -214,9 +223,9 @@ describe '[ログイン前]' do
     end
     context '動作の確認' do
       it 'Goodボタン、favoritesは動作しない' do
-        button = find_by_id('favs_buttons_2')
+        button = find_by_id('favs_buttons_1')
         button.click
-        expect(button).not_to have_text '1'        
+        expect(button).to have_text '0'        
       end
       it 'Goodボタンを押しても何も起きない、登録を促すmodalがでる' do
         button = find('a.fav')
@@ -255,7 +264,8 @@ describe '[ログイン前]' do
     end
     context '動作の確認' do
       it 'test11のShowボタンを押すとtest11のユーザーページに遷移する' do
-        expect(page).to have_link 'Show', href: '/users/11'
+        find_by_id('u-link-16').click
+        expect(current_path).to eq "/users/16"
       end
       it '次ページに移動するとランクは11位からになっている' do
         visit '/ranking?page=2'
@@ -271,27 +281,27 @@ describe '[ログイン前]' do
     context '表示内容の確認' do
       before do
         visit '/change_language/ja'
-        visit user_path(1)
+        visit user_path(@user)
       end
       it 'test1のURLは/users/1である。' do
-        expect(current_path).to eq '/users/1'
+        expect(current_path).to eq "/users/#{@user.id}"
       end
       it '.svgの画像ファイルが表示されている' do
         expect(page).to have_selector("img")
       end
       it 'ユーザーの投稿一覧がある' do
-        expect(page).to have_text("test1の投稿")
+        expect(page).to have_text("Taroの投稿")
       end
       it 'ユーザーの投稿がない場合、投稿はありませんと表示される' do
-        visit user_path(3)
+        visit user_path(@third_user)
         expect(page).to have_text("投稿はありません")
       end
       it 'Check on GitHubリンクのURLはhttps://github.com/test1である' do
         cog_link = find_link('GitHubへ行く')[:href]
-        expect(cog_link).to match('https://github.com/test1')
+        expect(cog_link).to match("https://github.com/#{@user.name}")
       end
-      it 'ユーザーの投稿がない場合、投稿はありませんと表示される' do
-        visit user_path(2)
+      it '長すぎるタイトルは13文字と...になっている' do
+        visit user_path(@second_user)
         expect(page).to have_text("…")
       end
     end
@@ -316,21 +326,22 @@ describe '[ログイン前]' do
   end
   describe '[フォローページ]' do
     before do
-      visit user_follows_path(1)
+      visit user_follows_path(@user)
     end
 
     context '表示内容の確認' do
-      it 'test1のURLは/users/1/followsである。' do
-        expect(current_path).to eq '/users/1/follows'
+      it '@userのURLは/users/@user.id/followsである。' do
+        expect(current_path).to eq "/users/#{@user.id}/follows"
       end
       it 'フォローしているユーザーいない場合、このユーザーのフォローは0です。とでる' do
+        visit user_follows_path(3)
         expect(page).to have_text 'このユーザーのフォローは0です。'
       end
     end
     context '日本語版の確認' do
       before do
         visit '/change_language/ja'
-        visit user_follows_path(1)
+        visit user_follows_path(@user)
       end
       it '日本語版だと、ユーザー名の記載がある。' do
         expect(page).to have_text 'ユーザー名'
@@ -339,7 +350,7 @@ describe '[ログイン前]' do
     context '英語版だと、Nameの記載がある。' do
       before do
         visit '/change_language/en'
-        visit user_follows_path(1)
+        visit user_follows_path(@user)
       end
       it '英語版だと、Postの記載がある。' do
         expect(page).to have_text 'Name'
@@ -347,7 +358,7 @@ describe '[ログイン前]' do
     end
     context '動作の確認' do
       before do
-        visit user_follows_path(2)
+        visit user_follows_path(@user)
       end
       it 'リストにユーザーがいる場合、フォロー数のカウントが表示されている。' do
         expect(find('a.followcount'))
@@ -357,31 +368,32 @@ describe '[ログイン前]' do
       end
       it 'リストにいるユーザーのフォローカウントをクリックするとユーザーのフォローページに遷移する' do
         find('a.followcount').click
-        expect(current_path).to eq '/users/1/follows'
+        expect(current_path).to eq "/users/#{@second_user.id}/follows"
       end
       it 'リストにいるユーザーのフォロワーカウントをクリックするとユーザーのフォロワーページに遷移する' do
         find('a.followercount').click
-        expect(current_path).to eq '/users/1/followers'
+        expect(current_path).to eq "/users/#{@second_user.id}/followers"
       end
     end
   end
   describe '[フォロワーページ]' do
     before do
-      visit user_followers_path(2)
+      visit user_followers_path(@second_user)
     end
 
     context '表示内容の確認' do
-      it 'test21のURLは/users/2/followersである。' do
-        expect(current_path).to eq '/users/2/followers'
+      it '@second_userのURLは/users/@second_use.id/followersである。' do
+        expect(current_path).to eq "/users/#{@second_user.id}/followers"
       end
       it 'フォロワーになっているユーザーいない場合、このユーザーのフォロワーは0です。とでる' do
+        visit user_followers_path(3)
         expect(page).to have_text 'このユーザーのフォロワーは0です。'
       end
     end
     context '日本語版の確認' do
       before do
         visit '/change_language/ja'
-        visit user_followers_path(2)
+        visit user_followers_path(@second_user)
       end
       it '日本語版だと、ユーザー名の記載がある。' do
         expect(page).to have_text 'ユーザー名'
@@ -390,7 +402,7 @@ describe '[ログイン前]' do
     context '英語版だと、Nameの記載がある。' do
       before do
         visit '/change_language/en'
-        visit user_followers_path(2)
+        visit user_followers_path(@second_user)
       end
       it '英語版だと、Postの記載がある。' do
         expect(page).to have_text 'Name'
@@ -398,7 +410,7 @@ describe '[ログイン前]' do
     end
     context '動作の確認' do
       before do
-        visit user_followers_path(1)
+        visit user_followers_path(@second_user)
       end
       it 'リストにユーザーがいる場合、フォロー数のカウントが表示されている。' do
         expect(find('a.followcount'))
@@ -408,11 +420,11 @@ describe '[ログイン前]' do
       end
       it 'リストにいるユーザーのフォローカウントをクリックするとユーザーのフォローページに遷移する' do
         find('a.followcount').click
-        expect(current_path).to eq '/users/2/follows'
+        expect(current_path).to eq "/users/#{@user.id}/follows"
       end
       it 'リストにいるユーザーのフォロワーカウントをクリックするとユーザーのフォロワーページに遷移する' do
         find('a.followercount').click
-        expect(current_path).to eq '/users/2/followers'
+        expect(current_path).to eq "/users/#{@user.id}/followers"
       end
     end
   end

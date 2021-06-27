@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :follows, :followers]
   before_action :ensure_correct_user, only: [:update, :edit]
   def index
     # .orderでソートできる。
