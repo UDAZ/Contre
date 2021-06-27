@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user.id), notice: 'You have updated contributions successfully.'
+      redirect_to user_path(@user.id), notice: t('user.updated')
     else
       redirect_to edit_user_path(@user.id)
     end

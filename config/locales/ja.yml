@@ -56,6 +56,7 @@ ja:
     uc: コントリビューション更新
     np: 新規投稿
     update: 更新
+    updated: コントリビューション更新に成功しました。
   relation:
     follows: フォロー
     followers: フォロワー
@@ -68,6 +69,7 @@ ja:
     reported: 通報済みです。
     reportnote: 通報を送信しますと運営部が通報詳細を確認し、必要な対応を行います。対応にはお時間を頂く場合がございますので予めご了承ください。
     send: 送信
+    reportsuccess: 通報が完了しました。
   notice:
     notice: 通知一覧
     nonotice: 通知はありません。
