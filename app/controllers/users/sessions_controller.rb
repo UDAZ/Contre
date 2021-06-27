@@ -5,7 +5,7 @@ module Users
     def new_guest
       user = User.guest
       sign_in user
-      redirect_to root_path, notice: t('header.guestmessage')
+      redirect_to user_path(user), notice: t('header.guestmessage')
     end
   end
 end

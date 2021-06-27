@@ -16,7 +16,7 @@
             </div>
               <div class="mt-2 mb-1"><%= link_to post_path(post), class: "post-title text-dark font-weight-bold" do %><% if post.title.length >= 5 %><%= post.title.slice(0..12).insert(-1, "…") %><% else %><%= post.title %><% end %><% end %></div>
             <div class="d-flex justify-content-between">
-              <small class="align-self-end"><%= t'activerecord.models.genre' %>: <%= post.genre.name %></small>
+              <small class="align-self-end"><%= link_to "/posts?genre=#{post.genre.name}", class: "text-black-50" do %><%= t'activerecord.models.genre' %>: <%= post.genre.name %><% end %></small>
               <div id="favs_buttons_<%= post.id %>"><%= render 'favorites/fav', post: post %></div>
             </div>
           </div>

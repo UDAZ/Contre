@@ -54,8 +54,10 @@ en:
     cs: Contributions
     posts: "'s Posts"
     uc: Update Contributions
+    uca: '*A recount is performed on the first day of each month.'
     np: New Post
     update: Update
+    updated: You have updated contributions successfully.
   relation:
     follows: Follows
     followers: Followers
@@ -68,6 +70,7 @@ en:
     reported: It's been reported.
     reportnote: Once the report is sent, the operation department will check the details of the report and take action.
     send: Send
+    reportsuccess: You have successfully reported.
   notice:
     notice: Notice
     nounread: There are no notifications.

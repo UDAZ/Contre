@@ -98,11 +98,15 @@
               <div class="alert alert-secondary col-12 mt-2"><%= notice %></div>
             <% end %>
             <% if alert.present? %>
-              <div class="alert alert-secondary col-12 mt-2">
-                <% alert.each do |message| %>
-                  <div><%= message %></div>
-                <% end %>
-              </div>
+              <% if alert == true %>
+                <div class="alert alert-secondary col-12 mt-2">
+                  <% alert.each do |message| %>
+                    <div><%= message %></div>
+                  <% end %>
+                </div>
+              <% else %>
+                <div class="alert alert-secondary col-12 mt-2"><%= alert %></div>
+              <% end %>
             <% end %>
             <%= yield %>
           </div>

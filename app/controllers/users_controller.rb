@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :follows, :followers]
+  before_action :ensure_correct_user, only: [:update, :edit]
   def index
     # .orderでソートできる。
     @users = User.order('contributions DESC').page(params[:page]).per(10)
@@ -42,7 +44,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user.id), notice: 'You have updated contributions successfully.'
+      redirect_to user_path(@user.id), notice: t('user.updated')
     else
       redirect_to edit_user_path(@user.id)
     end
@@ -60,5 +62,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:contributions)
+  end
+
+  def ensure_correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to user_path(current_user)
+    end
   end
 end

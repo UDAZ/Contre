@@ -20,9 +20,6 @@ class Batch::AutoUpdateContribution
       end
       user.update(contributions: user.contributions)
     end
-    # @users = User.all
-    # @users.each do |user|
-    # end
     p "全てのコントリビューションをアップデートしました。"
   end
 end

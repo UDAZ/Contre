@@ -14,7 +14,7 @@
           <small class="col-5 px-05"><%= t'ranking.cs' %></small>
         </div>
         <% @users.each.with_index(@page) do |user, i| %>
-            <%= link_to user_path(user), class: "d-flex list-group-item list-group-item-action align-items-center p-list" do %>
+            <%= link_to user_path(user), id: "u-link-#{user.id}", class: "d-flex list-group-item list-group-item-action align-items-center p-list" do %>
             <div class="col-3 px-05"><%= i %></div>
             <div class="col-4 px-05"><%= user.name %></div>
             <div class="col-5 px-05">

@@ -7,7 +7,8 @@ describe '[ログイン後]' do
     @user = FactoryBot.create(:user, :a)
     @second_user = FactoryBot.create(:user, :b)
     @third_user = FactoryBot.create(:user, :c)
-    @post = FactoryBot.create(:post, user_id: @user.id)
+    @post = FactoryBot.create(:post, :a, user_id: @user.id)
+    @second_post = FactoryBot.create(:post, :b, user_id: @second_user.id)
   end
   describe '[ヘッダー]' do
     before do
@@ -170,7 +171,7 @@ describe '[ログイン後]' do
         fill_in 'post[body]', with: 'UDAZ'
         select "AWS", from: "post_genre_id"
         click_button '送信', wait: 5
-        expect(current_path).to eq "/posts/4"
+        expect(current_path).to eq "/posts/3"
       end
       it 'タイトルとジャンルと本文のいずれかがない場合投稿ができない' do
         fill_in 'post[title]', with: 'UDAZ'
@@ -200,7 +201,7 @@ describe '[ログイン後]' do
         fill_in 'post[body]', with: 'UDAZ'
         select "AWS", from: "post_genre_id"
         click_button '送信', wait: 5
-        expect(current_path).to eq "/posts/3"
+        expect(current_path).to eq "/posts/1"
       end
       it 'タイトルとジャンルと本文のいずれかがない場合投稿ができない' do
         fill_in 'post[title]', with: 'UDAZ'
