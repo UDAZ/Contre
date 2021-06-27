@@ -83,6 +83,9 @@
                 <li class="nav-item">
                   <%= link_to "#{t'header.login'}", user_github_omniauth_authorize_path, class: 'nav-link', method: :post %>
                 </li>
+                <li class="nav-item">
+                  <%= link_to "#{t'header.guestlogin'}", guest_user_session_path, class: 'nav-link text-white', method: :post %>
+                </li>
               <% end %>
             </ul>
           </div>

@@ -7,8 +7,10 @@ en:
     notice: Notice
     logout: Logout
     login: Sign in with Github
+    guestlogin: Sign in as Guest
     newleft: "(new: "
     newright: ")"
+    guestmessage: "You have successfully guest logged in"
   top:
     wwyd?: What will you do?
     contre?: Contribute?

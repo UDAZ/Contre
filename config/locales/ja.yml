@@ -7,8 +7,10 @@ ja:
     notice: 通知
     logout: ログアウト
     login: GitHubでログイン
+    guestlogin: ゲストログイン
     newleft: "(新着"
     newright: "件)"
+    guestmessage: "ゲストログインが成功しました。"
   top:
     wwyd?: どうする？
     contre?: こんとる？
