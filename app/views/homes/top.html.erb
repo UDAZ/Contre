@@ -3,7 +3,7 @@
 </div>
 <div class="col-11 col-sm-8 col-lg-6 mx-auto">
   <%= form_with url: root_path, class: "form-inline", local:true do |f| %>
-      <%= f.text_field :name, placeholder: "Github username",value: "#{params[:name]}", class: "form-control col-12 col-sm-8" %>
+      <%= f.text_field :name, placeholder: "#{t'top.form'}",value: "#{params[:name]}", class: "form-control col-12 col-sm-8" %>
       <%= f.submit "#{t'top.contre'}", class: 'mt-sm-0 mt-2 btn btn-dark col-12 col-sm-4' %>
   <% end %>
 </div>
