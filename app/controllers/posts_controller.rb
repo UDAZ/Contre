@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       @genre = Genre.find_by(:name => params[:genre])
         
       # genre_idと紐づく投稿を取得
-      @search_posts = @genre.posts.includes([:user]).page(params[:page]).per(10)
+      @search_posts = @genre.posts.includes([:genre], [:user]).page(params[:page]).per(10)
     end
   end
 
