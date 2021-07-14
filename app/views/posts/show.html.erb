@@ -1,5 +1,5 @@
 <div class="col-12 mt-3">
-  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.post' %> / <% if @post.title.length >= 12 %><%= @post.title.slice(0..12).insert(-1, "…") %><% else %><%= @post.title %><% end %></h4>
+  <h4 class="display-5"><i class="fas fa-book mr-2"></i><%= t'posts.post' %> / <% if sum_bytesize_for(@post.title.slice(0..20)) <= 29 %><%= @post.title.truncate(30) %><% elsif sum_bytesize_for(@post.title.slice(0..20)) >= 30 %><%= @post.title.truncate(19) %><% end %></h4>
 </div>
 <div class="col-12 mb-3 col-lg-8 mx-auto">
   <div class="card mt-3">

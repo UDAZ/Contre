@@ -18,4 +18,10 @@ module ApplicationHelper
       image_tag '0.svg', class: 'w-50'
     end
   end
+  def char_bytesize_for(char)
+    char.bytesize == 1 ? 1 : 2
+  end
+  def sum_bytesize_for(text)
+    text.each_char.map { |c| char_bytesize_for(c) }.inject(:+)
+  end
 end
