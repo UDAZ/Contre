@@ -11,6 +11,8 @@ en:
     newleft: "(new: "
     newright: ")"
     guestmessage: "You have successfully guest logged in"
+    search_form: "Enter keywords for post..."
+    search_submit: "Search"
   top:
     wwyd?: What will you do?
     contre?: Contribute?

@@ -8,7 +8,7 @@
         <h4 class="card-title"><%= t'posts.posts' %></h4>
       </div>
       <div class="list-group">
-        <% @posts.each do |post| %>
+        <% @search_posts.each do |post| %>
           <div class="list-group-item list-group-item-action">
             <div class="d-flex justify-content-between">
               <small><%= link_to user_path(post.user), class: "text-muted" do %><%= post.user.name %><% end %><%= t'posts.hasposted' %></small>
