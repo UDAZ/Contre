@@ -8,8 +8,9 @@ module NotificationsHelper
       tag.a(notification.visiter.name, href: user_path(@visiter), style: 'font-weight: bold;') + t('notice.followed')
     when 'fav'
       tag.a(notification.visiter.name, href: user_path(@visiter),
-                                       style: 'font-weight: bold;') + t('notice.liked') + tag.a(t('notice.yourpost'), href: post_path(notification.post_id),
-                                                                                                                      style: 'font-weight: bold;') + t('notice.good')
+                                       style: 'font-weight: bold;') + t('notice.liked') + tag.a(t('notice.yourpost'), 
+                                       href: post_path(notification.post_id),
+                                       style: 'font-weight: bold;') + t('notice.good')
     end
   end
 
