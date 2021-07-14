@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   #ransackを使った検索フォームをヘッダーに追加する。
   def set_search
     @search = Post.ransack(params[:q])
-    @search_posts = @search.result.page(params[:page]).per(10)
+    @search_posts = @search.result.includes([:genre], [:user]).page(params[:page]).per(10)
   end
 
   protected
