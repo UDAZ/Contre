@@ -1,8 +1,10 @@
+# redcarpetの設定
 module MarkdownHelper
   def markdown(text)
     unless @markdown
       options = {
-        filter_html: true,
+        #filter_html: true でほとんどのタグが使えなくなる。
+        filter_html: false,
         autolink: true,
         space_after_headers: true,
         no_intra_emphasis: true,

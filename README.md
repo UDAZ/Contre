@@ -1,4 +1,5 @@
 # こんとる
+![](https://i.imgur.com/y7SHbXm.jpg)
 
 ## サイト概要
 こんとるはgithubアカウントを使って楽しめる、プログラミング学習のモチベーション向上SNSです。登録は簡単、手軽に楽しく以下の機能を楽しめます。
@@ -25,14 +26,11 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 - プログラミング学習休憩中
 
 ## 設計書
-[UI Flow](https://drive.google.com/file/d/15LPyXF4mxrPVR0f-1bckvxB_m__6cxkt/view?usp=sharing)(
-[PNG](https://drive.google.com/file/d/1CBi2DOZJS5EHehty2TRDKabN8xHfaNfP/view?usp=sharing) )
+[UI Flow](https://drive.google.com/file/d/15LPyXF4mxrPVR0f-1bckvxB_m__6cxkt/view?usp=sharing)
 
-[ワイヤーフレーム](https://drive.google.com/file/d/1WpKv4Wc2ZFEeWciMzYEpyo0ClegDViOj/view?usp=sharing)(
-[PDF](https://drive.google.com/file/d/1ZI9I4vdbd8p-SW5fA9C_KMG2RcR8Pf4z/view?usp=sharing) )
+[ワイヤーフレーム](https://drive.google.com/file/d/1WpKv4Wc2ZFEeWciMzYEpyo0ClegDViOj/view?usp=sharing)
 
-[ER図](https://drive.google.com/file/d/17ttgQQM-OlCq4CnvlXPSIiORlN0REOTG/view?usp=sharing)(
-[PDF](https://drive.google.com/file/d/1CETjBLyEWDTX1kRyO-j68pI8w-R3NEV8/view?usp=sharing) )
+[ER図](https://drive.google.com/file/d/17ttgQQM-OlCq4CnvlXPSIiORlN0REOTG/view?usp=sharing)
 
 [テーブル定義書](https://drive.google.com/file/d/15AuQKaz0aoF_eX07CcXCLhOmYSmEpM1x/view?usp=sharing)
 
@@ -51,13 +49,6 @@ githubを使っている全てのプログラマーがターゲットユーザ�
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
-
-## 実験環境
-- OS：Linux(Ubuntu)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
-- IDE：Visual Stuido Code
 
 ## 使用素材
 - [Unsplash](https://unsplash.com/)

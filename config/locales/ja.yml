@@ -11,9 +11,12 @@ ja:
     newleft: "(新着"
     newright: "件)"
     guestmessage: "ゲストログインが成功しました。"
+    search_form: "投稿キーワードを入力..."
+    search_submit: "検索"
   top:
     wwyd?: どうする？
     contre?: こんとる？
+    form: GitHub の ユーザー名
     contre: こんとる
     ur: あなたは...
   about:

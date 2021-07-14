@@ -192,6 +192,7 @@ describe '[ログイン前]' do
         expect(current_path).to eq "/posts/#{@post.id}"
       end
       it '長すぎるタイトルは13文字と...になっている' do
+        visit post_path(@second_post)
         expect(page).to have_text(/…/i)
       end
       it '本文はマークダウン記法になっている' do

@@ -87,6 +87,10 @@
                   <%= link_to "#{t'header.guestlogin'}", guest_user_session_path, class: 'nav-link text-white', method: :post %>
                 </li>
               <% end %>
+              <%= search_form_for @search, url: posts_path, class: 'form-inline my-2 my-lg-0 mx-0 mx-lg-1' do |f| %>
+                <%= f.text_field :title_or_body_cont ,placeholder: "#{t'header.search_form'}", class: 'form-control mr-sm-2' %>
+                <%= f.submit "#{t'header.search_submit'}" , class: 'btn btn-success my-2 my-sm-0'%>
+              <% end %>
             </ul>
           </div>
         </nav>

@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # コントリビューション称号画像
   def showconimg
     if @user.contributions >= 3200
       image_tag '3200.svg', class: 'w-50'
@@ -17,5 +18,12 @@ module ApplicationHelper
     elsif @user.contributions >= 0
       image_tag '0.svg', class: 'w-50'
     end
+  end
+  # bytesizeを取得してtruncateを全角半角で微調整する、レイアウトが崩れるのを防ぐため。
+  def char_bytesize_for(char)
+    char.bytesize == 1 ? 1 : 2
+  end
+  def sum_bytesize_for(text)
+    text.each_char.map { |c| char_bytesize_for(c) }.inject(:+)
   end
 end
