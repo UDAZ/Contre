@@ -2,7 +2,14 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  
+  before_action :set_search
+
+  #ransackを使った検索フォームをヘッダーに追加する。
+  def set_search
+    @search = Post.ransack(params[:q])
+    @search_posts = @search.result.includes([:genre], [:user]).page(params[:page]).per(10)
+  end
+
   protected
   def after_sign_in_path_for(resource)
     user_path(resource)
